@@ -10,23 +10,21 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   var db = firebase.firestore();
-  allProducts()
 
+  allProducts()
 var html=''
   function allProducts() {
+  
   
     db.collection("products").get()
             .then(function (querySnapshot) {
                 // doc.data() is never undefined for query doc snapshots
              
                 querySnapshot.docs.forEach(function(data) {
-              
-                   
-                    
+
                    html += '<div class="col-md-3">'+'<img class="card-img-top"" src="'+data.data().pic[0]+'">' +
-                  
-                   '<div class="card-body" >'+data.data().volumeProduct+'</div> '+
-                   '<div class="ingredient" >'+'  <h4 class="card-title">ส่วนประกอบ</h4>'+
+                   '<div class="card-body" >'+'<h5>'+data.data().volumeProduct+'</h5>'+'</div> '+
+                   '<div class="ingredient" >'+'  <p class="card-title">ส่วนประกอบ</p>'+
                   ' <p class="card-text">'+data.data().ingredient+'</p>'+'</div> '+'</div>'
                });
                document.getElementById("show").innerHTML = html;

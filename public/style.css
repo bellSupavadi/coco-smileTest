@@ -1,11 +1,11 @@
 .products{
-    margin: 0px 0px -100px;
-    padding: 100px 0px;
+    margin: 0px 0px -200px;
+    padding: 200px 0px;
 }
 .card-img-top{
     height: 256px;
     width: 212px;
 }
 .product-title{
-    padding-bottom: 30px;
+   margin-bottom: 50px;
 }
